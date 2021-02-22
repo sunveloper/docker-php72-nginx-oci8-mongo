@@ -101,7 +101,7 @@ RUN unzip /tmp/instantclient-basic-linux.x64-21.1.0.0.0.zip -d /usr/local/
 RUN unzip /tmp/instantclient-sdk-linux.x64-21.1.0.0.0.zip -d /usr/local/
 RUN unzip /tmp/instantclient-sqlplus-linux.x64-21.1.0.0.0.zip -d /usr/local/
 RUN ln -s /usr/local/instantclient_21_1 /usr/local/instantclient
-RUN ln -s /usr/local/instantclient/libclntsh.so.21.1 /usr/local/instantclient/libclntsh.so
+RUN ln -s /usr/local/instantclient/libclntsh.so.12.1 /usr/local/instantclient/libclntsh.so
 RUN ln -s /usr/local/instantclient/sqlplus /usr/bin/sqlplus
 RUN echo 'instantclient,/usr/local/instantclient' | pecl install oci8
 RUN echo "extension=oci8.so" > /etc/php/7.2/mods-available/30-oci8.ini
