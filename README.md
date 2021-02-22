@@ -11,21 +11,21 @@
 ## Building from source
 To build from source you need to clone the git repo and run docker build:
 ```
-git clone https://github.com/notegame/docker-php7-nginx-oci8-mongo.git
-docker build -t notegame/docker-php7-nginx-oci8-mongo:latest .
+git clone https://github.com/sunveloper/docker-php72-nginx-oci8-mongo.git
+docker build -t sunveloper/docker-php72-nginx-oci8-mongo:latest .
 ```
 
 ## Running
 To simply run the container:
 ```
-sudo docker run -d --name nginx -p 8080:80 notegame/docker-php7-nginx-oci8-mongo
+sudo docker run -d --name nginx -p 8080:80 sunveloper/docker-php72-nginx-oci8-mongo
 ```
 
 You can then browse to ```http://<DOCKER_HOST>:8080``` to view the default install files.
 ### Volumes
 If you want to link to your web site directory on the docker host to the container run:
 ```
-sudo docker run -d --name nginx -p 8080:80 -v /your_code_directory:/var/www notegame/docker-php7-nginx-oci8-mongo
+sudo docker run -d --name nginx -p 8080:80 -v /your_code_directory:/var/www sunveloper/docker-php72-nginx-oci8-mongo
 ```
 
 ### Linking
@@ -54,7 +54,7 @@ MYSQL_PORT=tcp://172.17.0.236:3306
 
 To link the container launch like this:
 ```
-sudo docker run -e 'GIT_REPO=git@git.ngd.io:ngineered/ngineered-website.git' -v /opt/ngddeploy/:/root/.ssh -p 8080:80 --link some-mysql:mysql -d notegame/docker-php7-nginx-oci8-mongo
+sudo docker run -e 'GIT_REPO=git@git.ngd.io:ngineered/ngineered-website.git' -v /opt/ngddeploy/:/root/.ssh -p 8080:80 --link some-mysql:mysql -d sunveloper/docker-php72-nginx-oci8-mongo
 ```
 
 ### Enabling SSL or Special Nginx Configs
@@ -102,7 +102,7 @@ If you want to link to an external MySQL DB and not using linking you can pass v
 
 Example:
 ```
-sudo docker run -e 'GIT_REPO=git@git.ngd.io:ngineered/ngineered-website.git' -e 'TEMPLATE_NGINX_HTML=1' -e 'GIT_BRANCH=stage' -e 'MYSQL_HOST=host.x.y.z' -e 'MYSQL_USER=username' -e 'MYSQL_PASS=password' -v /opt/ngddeploy/:/root/.ssh -p 8080:80 -d notegame/docker-php7-nginx-oci8-mongo
+sudo docker run -e 'GIT_REPO=git@git.ngd.io:ngineered/ngineered-website.git' -e 'TEMPLATE_NGINX_HTML=1' -e 'GIT_BRANCH=stage' -e 'MYSQL_HOST=host.x.y.z' -e 'MYSQL_USER=username' -e 'MYSQL_PASS=password' -v /opt/ngddeploy/:/root/.ssh -p 8080:80 -d sunveloper/docker-php72-nginx-oci8-mongo
 ```
 
 This will expose the following variables that can be used to template your code.
