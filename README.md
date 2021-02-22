@@ -6,7 +6,7 @@
 ## Versions
 - Nginx Mainline Version: **1.9.11**
 - PHP: **7.2**
-- Ubuntu Trusty: **18.04.5**
+- Ubuntu Bionic Beaver: **18.04.5**
 
 ## Building from source
 To build from source you need to clone the git repo and run docker build:
