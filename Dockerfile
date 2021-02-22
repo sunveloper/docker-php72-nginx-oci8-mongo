@@ -17,7 +17,7 @@ nginx=stable && \
 add-apt-repository ppa:nginx/$nginx && \
 apt-get update && \
 apt-get upgrade -y && \
-BUILD_PACKAGES="supervisor nginx php7.2-fpm php7.2-mysql php7.2-curl php7.2-gd php7.2-intl php7.2-mcrypt php7.2-sqlite php7.2-tidy php7.2-xmlrpc php7.2-xsl php7.2-pgsql php7.2-ldap git pwgen" && \
+BUILD_PACKAGES="supervisor nginx php7.2-fpm php7.2-mysql php7.2-curl php7.2-gd php7.2-intl php7.2-sqlite php7.2-tidy php7.2-xmlrpc php7.2-xsl php7.2-pgsql php7.2-ldap git pwgen" && \
 apt-get -y install $BUILD_PACKAGES && \
 apt-get remove --purge -y software-properties-common && \
 apt-get autoremove -y && \
@@ -51,7 +51,7 @@ RUN sed -i -e "s/;listen.mode = 0660/listen.mode = 0750/g" /etc/php/7.2/fpm/pool
 find /etc/php/7.2/cli/conf.d/ -name "*.ini" -exec sed -i -re 's/^(\s*)#(.*)/\1;\2/g' {} \;
 
 # mycrypt conf
-RUN phpenmod mcrypt
+RUN phpenmod
 
 # nginx site conf
 RUN rm -Rf /etc/nginx/conf.d/* && \
