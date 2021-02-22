@@ -76,8 +76,8 @@ ADD conf/supervisord.conf /etc/supervisord.conf
 RUN mkdir -p /run/php/ && chown -Rf www-data.www-data /run/php
 
 # Start Supervisord
-ADD scripts/start.sh /start.sh
-RUN chmod 755 /start.sh
+# ADD scripts/start.sh /start.sh
+# RUN chmod 755 /start.sh
 
 # Setup Volume
 VOLUME ["/usr/share/nginx/html"]
@@ -133,4 +133,5 @@ EXPOSE 80
 # Set default work directory
 WORKDIR /var/www
 
-CMD ["/bin/bash", "/start.sh"]
+# CMD ["/bin/bash", "/start.sh"]
+CMD ["nginx", "-g", "daemon off;"]
