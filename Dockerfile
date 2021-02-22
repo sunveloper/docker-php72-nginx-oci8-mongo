@@ -1,4 +1,4 @@
-FROM ubuntu:18.04.5
+FROM ubuntu:18.04
 MAINTAINER Ric Harvey <ric@ngineered.co.uk>
 
 # Surpress Upstart errors/warning
